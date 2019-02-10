@@ -3,13 +3,19 @@ package com.dc.vcftocsv.model
 import scala.beans.BeanProperty
 import scala.collection.JavaConverters._
 
-class Telephone {
+class Address {
 
-  @BeanProperty var number: String = _
+  @BeanProperty var streetAddress: String = _
+
+  @BeanProperty var locality: String = _
+
+  @BeanProperty var region: String = _
+
+  @BeanProperty var postalCode: String = _
+
+  @BeanProperty var country: String = _
 
   @BeanProperty var types: java.util.List[String] = _
-
-  def isCell : Boolean = getTypes.asScala.contains("cell")
 
   def isHome : Boolean = getTypes.asScala.contains("home")
 

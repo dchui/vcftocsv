@@ -4,6 +4,5 @@ import scala.beans.BeanProperty
 
 class Organisation {
 
-  @BeanProperty
-  var name : String = _
+  @BeanProperty var name : String = _
 }

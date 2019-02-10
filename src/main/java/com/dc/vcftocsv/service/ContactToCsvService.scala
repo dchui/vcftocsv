@@ -58,6 +58,16 @@ class ContactToCsvService {
           (m: Int) => {
             List(s"emails[$m].address", s"emails[$m].preferred", s"emails[$m].home", s"emails[$m].work")
           }
+        ) ++
+        createMappingForCollectionAttributes(
+          (c: Contact) => c.getAddresses.asScala.toList,
+          (m: Int) => {
+            List(
+              s"addresses[$m].streetAddress", s"addresses[$m].locality",
+              s"addresses[$m].region", s"addresses[$m].postalCode", s"addresses[$m].postalCode",
+              s"addresses[$m].preferred", s"addresses[$m].home", s"addresses[$m].work"
+            )
+          }
         )
     ).toArray
   }
